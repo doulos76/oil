@@ -8,12 +8,24 @@
 
 import UIKit
 
-class AvgAllPriceHeaderView: UIView {
+class AvgAllPriceHeaderView: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return 5
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+    return cell
+  }
+  
+  let cellId = "cellId"
   
   let collectionView: UICollectionView = {
     let layout = UICollectionViewFlowLayout()
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    collectionView.backgroundColor = .blue
+    collectionView.backgroundColor = .green//.naviBarCustomYellow
+    
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     return collectionView
   }()
@@ -71,6 +83,7 @@ class AvgAllPriceHeaderView: UIView {
     backgroundColor = UIColor.naviBarCustomYellow
     setupAllPriceView()
     print("Setting all price header view")
+    collectionView.register(AvgAllPriceViewCell.self, forCellWithReuseIdentifier: cellId)
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -82,20 +95,21 @@ class AvgAllPriceHeaderView: UIView {
     addSubview(avgAllPriceLabel)
     addSubview(dateLabel)
     addSubview(collectionView)
-    
+
     avgAllPriceLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
     avgAllPriceLabel.heightAnchor.constraint(equalToConstant: 20)
     avgAllPriceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
     avgAllPriceLabel.widthAnchor.constraint(equalTo: dateLabel.widthAnchor).isActive = true
-    
+
     dateLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
     dateLabel.bottomAnchor.constraint(equalTo: avgAllPriceLabel.bottomAnchor).isActive = true
     dateLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-    
+
     collectionView.topAnchor.constraint(equalTo: avgAllPriceLabel.bottomAnchor).isActive = true
     collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
     collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
   }
+  
 
 }

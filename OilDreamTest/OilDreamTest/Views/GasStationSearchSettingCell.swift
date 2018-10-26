@@ -8,12 +8,6 @@
 
 import UIKit
 
-//class IconImagView: UIImageView {
-//  override var intrinsicContentSize: CGSize {
-//    return .init(width: 44, height: 44)
-//  }
-//}
-
 class GasStationSearchSettingCell: UITableViewCell {
   let iConImageView: UIImageView = {
     let imageView = UIImageView()
@@ -42,8 +36,7 @@ class GasStationSearchSettingCell: UITableViewCell {
   }()
   
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
-    
+    super.init(style: style, reuseIdentifier: reuseIdentifier)    
     setupViews()
   }
   
@@ -70,20 +63,5 @@ class GasStationSearchSettingCell: UITableViewCell {
     selectedLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     selectedLabel.widthAnchor.constraint(equalToConstant: 50).isActive = true
     selectedLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-
-
-    
-//    let arrangedSubviews = [iConImageView, titleLabel, selectedLabel]
-//    let stackView = UIStackView(arrangedSubviews: arrangedSubviews)
-//    addSubview(stackView)
-//    addSubview(stackView)
-//    stackView.axis = .horizontal
-//    stackView.alignment = .fill
-//    stackView.distribution = .fill
-//    stackView.anchor(top: nil, bottom: nil, leading: leadingAnchor, trailing: trailingAnchor, paddingTop: 0, paddingBottom: 0, paddingLeading: 16, paddingTrailing: 30, width: 0, height: 30)
-//    stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-    
-//    stackView.anchor(top: topAnchor, bottom: bottomAnchor, leading: leadingAnchor, trailing: trailingAnchor, paddingTop: 10, paddingBottom: 10, paddingLeading: 16, paddingTrailing: 16, width: 0, height: 0)
-    
   }
 }

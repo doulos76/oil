@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingDetailViewController: UITableViewController {
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .white
