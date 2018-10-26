@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingDetailViewController: UIViewController {
+class SettingDetailViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()

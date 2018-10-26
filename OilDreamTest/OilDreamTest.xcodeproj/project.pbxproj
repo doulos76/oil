@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550EAFD42182E151002BBCE1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EAFD32182E151002BBCE1 /* UIView+Extensions.swift */; };
+		550EAFD62182E6EF002BBCE1 /* GasStationSearchSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EAFD52182E6EF002BBCE1 /* GasStationSearchSettingCell.swift */; };
+		550EAFD82182FAE7002BBCE1 /* GasStationSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EAFD72182FAE7002BBCE1 /* GasStationSearchModel.swift */; };
 		553340ED2178CAFB0056B54D /* ProductCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553340EC2178CAFB0056B54D /* ProductCode.swift */; };
 		553340EF2178CC0B0056B54D /* AvgSidoPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553340EE2178CC0B0056B54D /* AvgSidoPrice.swift */; };
 		553D4703216E179C00CA4B2E /* AvgAllPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D4702216E179C00CA4B2E /* AvgAllPrice.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		550EAFD32182E151002BBCE1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		550EAFD52182E6EF002BBCE1 /* GasStationSearchSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationSearchSettingCell.swift; sourceTree = "<group>"; };
+		550EAFD72182FAE7002BBCE1 /* GasStationSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationSearchModel.swift; sourceTree = "<group>"; };
 		553340EC2178CAFB0056B54D /* ProductCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCode.swift; sourceTree = "<group>"; };
 		553340EE2178CC0B0056B54D /* AvgSidoPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgSidoPrice.swift; sourceTree = "<group>"; };
 		553D4702216E179C00CA4B2E /* AvgAllPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgAllPrice.swift; sourceTree = "<group>"; };
@@ -75,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		550EAFD22182E136002BBCE1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				550EAFD32182E151002BBCE1 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		556711A021648F97009B4C52 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +108,7 @@
 		556711AB21648F97009B4C52 /* OilDreamTest */ = {
 			isa = PBXGroup;
 			children = (
+				550EAFD22182E136002BBCE1 /* Extensions */,
 				5591B09C21675676007BCCD2 /* Helper */,
 				556711AC21648F97009B4C52 /* AppDelegate.swift */,
 				556711B021648F97009B4C52 /* Main.storyboard */,
@@ -132,6 +147,7 @@
 				55A1EA2521664861005D6852 /* SearchViewCell.swift */,
 				556C75072171D86200A3D9C2 /* AvgAllPriceHeaderView.swift */,
 				556C750B2171ED0C00A3D9C2 /* AvgAllPriceViewCell.swift */,
+				550EAFD52182E6EF002BBCE1 /* GasStationSearchSettingCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,6 +159,7 @@
 				553D4702216E179C00CA4B2E /* AvgAllPrice.swift */,
 				553340EC2178CAFB0056B54D /* ProductCode.swift */,
 				553340EE2178CC0B0056B54D /* AvgSidoPrice.swift */,
+				550EAFD72182FAE7002BBCE1 /* GasStationSearchModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +254,7 @@
 			files = (
 				553340ED2178CAFB0056B54D /* ProductCode.swift in Sources */,
 				55A1EA24216644A6005D6852 /* Search.swift in Sources */,
+				550EAFD82182FAE7002BBCE1 /* GasStationSearchModel.swift in Sources */,
 				556C750C2171ED0C00A3D9C2 /* AvgAllPriceViewCell.swift in Sources */,
 				556711C8216499A6009B4C52 /* AddressSearchViewController.swift in Sources */,
 				556711D321649D54009B4C52 /* UIColor+Theme.swift in Sources */,
@@ -248,7 +266,9 @@
 				553D4703216E179C00CA4B2E /* AvgAllPrice.swift in Sources */,
 				556C750A2171ECCC00A3D9C2 /* AvgAllPriceViewController.swift in Sources */,
 				556711C2216495FC009B4C52 /* SearchViewController.swift in Sources */,
+				550EAFD42182E151002BBCE1 /* UIView+Extensions.swift in Sources */,
 				55A1EA222166289F005D6852 /* BottomBarView.swift in Sources */,
+				550EAFD62182E6EF002BBCE1 /* GasStationSearchSettingCell.swift in Sources */,
 				556711D021649A92009B4C52 /* BookmarkViewController.swift in Sources */,
 				55A1EA2621664861005D6852 /* SearchViewCell.swift in Sources */,
 				556711CA216499D1009B4C52 /* HighwaySearchViewController.swift in Sources */,

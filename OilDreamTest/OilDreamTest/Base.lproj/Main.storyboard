@@ -183,6 +183,27 @@
             </objects>
             <point key="canvasLocation" x="2983" y="136"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="cZW-02-oaW">
+            <objects>
+                <viewController id="tiw-Uw-a5L" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NIh-07-QbH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yMr-4X-eZk">
+                                <rect key="frame" x="42" y="91" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3vH-Xv-Of5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0eH-Fh-ZRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3733" y="138"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="OuL-0D-L6V">
             <objects>
