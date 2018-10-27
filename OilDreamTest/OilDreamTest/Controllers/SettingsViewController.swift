@@ -8,13 +8,14 @@
 
 import UIKit
 
-//class CustomLabel: UILabel {
-//  override var layoutMargins: UIEdgeInsets {
-//    return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-//  }
-//}
-
 class SettingsViewController: UIViewController {
+  
+  let headerView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .naviBarCustomYellow
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
   
   let avgAllPriceLabel: UILabel = {
     let label = UILabel()
@@ -22,18 +23,18 @@ class SettingsViewController: UIViewController {
     label.backgroundColor = .naviBarCustomYellow
     label.font = .systemFont(ofSize: 20)
     label.textColor = .black
-    label.textAlignment = .center
+    label.textAlignment = .left
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
   
   let dateLabel: UILabel = {
     let label = UILabel()
-    label.text = "2018.10.03"
+    label.text = ""
     label.backgroundColor = .naviBarCustomYellow
     label.textColor = .darkGray
     label.font = .systemFont(ofSize: 12)
-    label.textAlignment = .center
+    label.textAlignment = .right
     label.translatesAutoresizingMaskIntoConstraints = false
     return label
   }()
@@ -70,7 +71,7 @@ class SettingsViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = .white
     setupNavigationBar()
-    setupLabels()
+    setupViews()
     setupCollectionView()
     showAvgAllPrice()
     setupTableView()
@@ -78,15 +79,23 @@ class SettingsViewController: UIViewController {
   
   // MARK:- Setup Works
   
-  fileprivate func setupLabels() {
-    view.addSubview(avgAllPriceLabel)
-    view.addSubview(dateLabel)
-    avgAllPriceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-    avgAllPriceLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-    avgAllPriceLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+  fileprivate func setupViews() {
+    view.addSubview(headerView)
+    headerView.addSubview(avgAllPriceLabel)
+    headerView.addSubview(dateLabel)
+    
+    headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    headerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+    headerView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+    
+    avgAllPriceLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16).isActive = true
+    avgAllPriceLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor).isActive = true
+    avgAllPriceLabel.topAnchor.constraint(equalTo: headerView.topAnchor).isActive = true
     avgAllPriceLabel.widthAnchor.constraint(equalTo: dateLabel.widthAnchor).isActive = true
+    
     dateLabel.leadingAnchor.constraint(equalTo: avgAllPriceLabel.trailingAnchor).isActive = true
-    dateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+    dateLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16).isActive = true
     dateLabel.heightAnchor.constraint(equalTo: avgAllPriceLabel.heightAnchor).isActive = true
     dateLabel.topAnchor.constraint(equalTo: avgAllPriceLabel.topAnchor).isActive = true
   }
@@ -122,7 +131,6 @@ class SettingsViewController: UIViewController {
   func showAvgAllPrice() {
     let avgAllPriceUrlString = AVG_ALL_PRICE + QUERY_OUT_JSON_AND_CODE + OPINET_CODE
     guard let urlRequest = URL(string: avgAllPriceUrlString) else { return }
-    print("=============")
     URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
       if let err = error {
         print(err.localizedDescription)
@@ -132,7 +140,22 @@ class SettingsViewController: UIViewController {
       do {
         let avgAllPrice = try JSONDecoder().decode(AvgAllPrice.self, from: data)
         print(avgAllPrice)
-        
+        print(avgAllPrice.result.oils[0].tradeDate)
+        let tradeDate = avgAllPrice.result.oils[0].tradeDate
+        let dateString: String = tradeDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        if let date = dateFormatter.date(from: dateString) {
+          print(date)
+          let tradeDateString = date
+          let formatter = DateFormatter()
+          formatter.dateFormat = "yyyy, MM, dd"
+          let dateStr = formatter.string(from: tradeDateString)
+          print(dateStr)
+          DispatchQueue.main.async {
+            self.dateLabel.text = dateStr
+          }
+        }
       } catch let jsonErr {
         print(jsonErr.localizedDescription)
       }
