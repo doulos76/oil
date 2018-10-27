@@ -10,6 +10,7 @@
 		550EAFD42182E151002BBCE1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EAFD32182E151002BBCE1 /* UIView+Extensions.swift */; };
 		550EAFD62182E6EF002BBCE1 /* GasStationSearchSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EAFD52182E6EF002BBCE1 /* GasStationSearchSettingCell.swift */; };
 		550EAFD82182FAE7002BBCE1 /* GasStationSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EAFD72182FAE7002BBCE1 /* GasStationSearchModel.swift */; };
+		5525605D21842DB400BEC674 /* AreaCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525605C21842DB400BEC674 /* AreaCode.swift */; };
 		553340ED2178CAFB0056B54D /* ProductCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553340EC2178CAFB0056B54D /* ProductCode.swift */; };
 		553340EF2178CC0B0056B54D /* AvgSidoPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553340EE2178CC0B0056B54D /* AvgSidoPrice.swift */; };
 		553D4703216E179C00CA4B2E /* AvgAllPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D4702216E179C00CA4B2E /* AvgAllPrice.swift */; };
@@ -41,6 +42,7 @@
 		550EAFD32182E151002BBCE1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		550EAFD52182E6EF002BBCE1 /* GasStationSearchSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationSearchSettingCell.swift; sourceTree = "<group>"; };
 		550EAFD72182FAE7002BBCE1 /* GasStationSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationSearchModel.swift; sourceTree = "<group>"; };
+		5525605C21842DB400BEC674 /* AreaCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCode.swift; sourceTree = "<group>"; };
 		553340EC2178CAFB0056B54D /* ProductCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCode.swift; sourceTree = "<group>"; };
 		553340EE2178CC0B0056B54D /* AvgSidoPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgSidoPrice.swift; sourceTree = "<group>"; };
 		553D4702216E179C00CA4B2E /* AvgAllPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgAllPrice.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				553340EC2178CAFB0056B54D /* ProductCode.swift */,
 				553340EE2178CC0B0056B54D /* AvgSidoPrice.swift */,
 				550EAFD72182FAE7002BBCE1 /* GasStationSearchModel.swift */,
+				5525605C21842DB400BEC674 /* AreaCode.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				55A1EA2621664861005D6852 /* SearchViewCell.swift in Sources */,
 				556711CA216499D1009B4C52 /* HighwaySearchViewController.swift in Sources */,
 				556711AF21648F97009B4C52 /* MainViewController.swift in Sources */,
+				5525605D21842DB400BEC674 /* AreaCode.swift in Sources */,
 				5591B09E2167568E007BCCD2 /* FeedParser.swift in Sources */,
 				556711AD21648F97009B4C52 /* AppDelegate.swift in Sources */,
 				556711C421649644009B4C52 /* SettingsViewController.swift in Sources */,
