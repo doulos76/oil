@@ -10,11 +10,14 @@ import UIKit
 
 class AvgAllPriceViewCell: UICollectionViewCell {
   
-//  var avgAllPrice: AvgAllPrice {
-//    didSet {
-//
-//    }
-//  }
+
+  var oil: Oil! {
+    didSet {
+      productNameLabel.text = oil.productName
+      priceLabel.text = oil.price
+      diffLabel.text = oil.diff
+    }
+  }
   
   let productNameLabel: UILabel = {
     let label = UILabel()

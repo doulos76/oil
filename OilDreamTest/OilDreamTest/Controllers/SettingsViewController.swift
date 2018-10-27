@@ -9,7 +9,9 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-  
+
+  var oils = [Oil]()
+
   let headerView: UIView = {
     let view = UIView()
     view.backgroundColor = .naviBarCustomYellow
@@ -139,21 +141,20 @@ class SettingsViewController: UIViewController {
       guard let data = data else { return }
       do {
         let avgAllPrice = try JSONDecoder().decode(AvgAllPrice.self, from: data)
-        print(avgAllPrice)
-        print(avgAllPrice.result.oils[0].tradeDate)
+        
+        self.oils = avgAllPrice.result.oils
         let tradeDate = avgAllPrice.result.oils[0].tradeDate
         let dateString: String = tradeDate
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyyMMdd"
         if let date = dateFormatter.date(from: dateString) {
-          print(date)
           let tradeDateString = date
           let formatter = DateFormatter()
           formatter.dateFormat = "yyyy, MM, dd"
           let dateStr = formatter.string(from: tradeDateString)
-          print(dateStr)
           DispatchQueue.main.async {
             self.dateLabel.text = dateStr
+            self.collectionView.reloadData()
           }
         }
       } catch let jsonErr {
@@ -221,11 +222,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 extension SettingsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 5
+    return oils.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionViewCellId, for: indexPath) as! AvgAllPriceViewCell
+    let oil = self.oils[indexPath.row]
+    cell.oil = oil
     return cell
   }
   
