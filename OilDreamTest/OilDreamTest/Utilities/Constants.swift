@@ -36,3 +36,5 @@ let DETAIL_BY_ID = URL_BASE + "detailById.do"
 let AREA_CODE = URL_BASE + "areaCode.do"
 // 상호로 쥬유소 검색
 let SEARCH_BY_NAME = URL_BASE + "searchByName.do"
+
+typealias AvgAllPriceResponseCompletion = (AvgAllPrice?) -> Void

@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
 
   var oils = [Oil]()
+  var avgAllPriceApi = AvgAllPriceApi()
 
   let headerView: UIView = {
     let view = UIView()
@@ -27,6 +28,7 @@ class SettingsViewController: UIViewController {
     label.textColor = .black
     label.textAlignment = .left
     label.translatesAutoresizingMaskIntoConstraints = false
+    
     return label
   }()
   
@@ -75,7 +77,8 @@ class SettingsViewController: UIViewController {
     setupNavigationBar()
     setupViews()
     setupCollectionView()
-    showAvgAllPrice()
+//    showAvgAllPrice()
+    displayAvgAllPrice()
     setupTableView()
   }
   
@@ -130,43 +133,34 @@ class SettingsViewController: UIViewController {
     tableView.anchor(top: collectionView.bottomAnchor, bottom: view.bottomAnchor, leading: view.leadingAnchor, trailing: view.trailingAnchor, paddingTop: 20, paddingBottom: 0, paddingLeading: 0, paddingTrailing: 0, width: 0, height: 0)
   }
   
-  func showAvgAllPrice() {
-    let avgAllPriceUrlString = AVG_ALL_PRICE + QUERY_OUT_JSON_AND_CODE + OPINET_CODE
-    guard let urlRequest = URL(string: avgAllPriceUrlString) else { return }
-    URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-      if let err = error {
-        print(err.localizedDescription)
-        return
-      }
-      guard let data = data else { return }
-      do {
-        let avgAllPrice = try JSONDecoder().decode(AvgAllPrice.self, from: data)
-        
+  func displayAvgAllPrice() {
+    avgAllPriceApi.getAvgAllPrice { (avgAllPrice) in
+      if let avgAllPrice = avgAllPrice {
         self.oils = avgAllPrice.result.oils
         let tradeDate = avgAllPrice.result.oils[0].tradeDate
-        let dateString: String = tradeDate
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyyMMdd"
-        if let date = dateFormatter.date(from: dateString) {
-          let tradeDateString = date
-          let formatter = DateFormatter()
-          formatter.dateFormat = "yyyy, MM, dd"
-          let dateStr = formatter.string(from: tradeDateString)
-          DispatchQueue.main.async {
-            self.dateLabel.text = dateStr
-            self.collectionView.reloadData()
-          }
+        let dateString = self.dateHandler(date: tradeDate)
+        DispatchQueue.main.async {
+          self.dateLabel.text = dateString
+          self.collectionView.reloadData()
         }
-      } catch let jsonErr {
-        print(jsonErr.localizedDescription)
       }
-    }.resume()
+    }
+  }
+  
+  func dateHandler(date: String) -> String {
+    var dateString = date
+    let seperator = ", "
+    var index = dateString.index(dateString.startIndex, offsetBy: 4)
+    dateString.insert(contentsOf: seperator, at: index)
+    index = dateString.index(dateString.endIndex, offsetBy: -2)
+    dateString.insert(contentsOf: seperator, at: index)
+    print(dateString)
+    return dateString
   }
   
   @objc func handleCancel() {
     dismiss(animated: true, completion: nil)
   }
-
 }
 
 // MARK:- TableView Methods

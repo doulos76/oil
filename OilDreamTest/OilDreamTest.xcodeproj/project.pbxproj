@@ -36,6 +36,9 @@
 		55A1EA24216644A6005D6852 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A1EA23216644A6005D6852 /* Search.swift */; };
 		55A1EA2621664861005D6852 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A1EA2521664861005D6852 /* SearchViewCell.swift */; };
 		55A1EA2821664B67005D6852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55A1EA2721664B67005D6852 /* Assets.xcassets */; };
+		55AC7E462186DF8B00E59A4A /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC7E452186DF8B00E59A4A /* InsetLabel.swift */; };
+		55AC7E482186EC2200E59A4A /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC7E472186EC2200E59A4A /* AddressCell.swift */; };
+		55AC7E4B2187037800E59A4A /* AvgAllPriceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC7E4A2187037800E59A4A /* AvgAllPriceApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		55A1EA23216644A6005D6852 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		55A1EA2521664861005D6852 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
 		55A1EA2721664B67005D6852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55AC7E452186DF8B00E59A4A /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
+		55AC7E472186EC2200E59A4A /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
+		55AC7E4A2187037800E59A4A /* AvgAllPriceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgAllPriceApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +116,7 @@
 		556711AB21648F97009B4C52 /* OilDreamTest */ = {
 			isa = PBXGroup;
 			children = (
+				55AC7E492187036200E59A4A /* Services */,
 				550EAFD22182E136002BBCE1 /* Extensions */,
 				5591B09C21675676007BCCD2 /* Helper */,
 				556711AC21648F97009B4C52 /* AppDelegate.swift */,
@@ -145,11 +152,13 @@
 		556711BF21649589009B4C52 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				55AC7E452186DF8B00E59A4A /* InsetLabel.swift */,
 				55A1EA212166289F005D6852 /* BottomBarView.swift */,
 				55A1EA2521664861005D6852 /* SearchViewCell.swift */,
 				556C75072171D86200A3D9C2 /* AvgAllPriceHeaderView.swift */,
 				556C750B2171ED0C00A3D9C2 /* AvgAllPriceViewCell.swift */,
 				550EAFD52182E6EF002BBCE1 /* GasStationSearchSettingCell.swift */,
+				55AC7E472186EC2200E59A4A /* AddressCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -159,8 +168,8 @@
 			children = (
 				55A1EA23216644A6005D6852 /* Search.swift */,
 				553D4702216E179C00CA4B2E /* AvgAllPrice.swift */,
-				553340EC2178CAFB0056B54D /* ProductCode.swift */,
 				553340EE2178CC0B0056B54D /* AvgSidoPrice.swift */,
+				553340EC2178CAFB0056B54D /* ProductCode.swift */,
 				550EAFD72182FAE7002BBCE1 /* GasStationSearchModel.swift */,
 				5525605C21842DB400BEC674 /* AreaCode.swift */,
 			);
@@ -182,6 +191,14 @@
 				5591B09D2167568E007BCCD2 /* FeedParser.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		55AC7E492187036200E59A4A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				55AC7E4A2187037800E59A4A /* AvgAllPriceApi.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				553340ED2178CAFB0056B54D /* ProductCode.swift in Sources */,
+				55AC7E462186DF8B00E59A4A /* InsetLabel.swift in Sources */,
 				55A1EA24216644A6005D6852 /* Search.swift in Sources */,
 				550EAFD82182FAE7002BBCE1 /* GasStationSearchModel.swift in Sources */,
 				556C750C2171ED0C00A3D9C2 /* AvgAllPriceViewCell.swift in Sources */,
@@ -276,11 +294,13 @@
 				55A1EA2621664861005D6852 /* SearchViewCell.swift in Sources */,
 				556711CA216499D1009B4C52 /* HighwaySearchViewController.swift in Sources */,
 				556711AF21648F97009B4C52 /* MainViewController.swift in Sources */,
+				55AC7E482186EC2200E59A4A /* AddressCell.swift in Sources */,
 				5525605D21842DB400BEC674 /* AreaCode.swift in Sources */,
 				5591B09E2167568E007BCCD2 /* FeedParser.swift in Sources */,
 				556711AD21648F97009B4C52 /* AppDelegate.swift in Sources */,
 				556711C421649644009B4C52 /* SettingsViewController.swift in Sources */,
 				556711CE21649A4A009B4C52 /* GasStationDetailViewController.swift in Sources */,
+				55AC7E4B2187037800E59A4A /* AvgAllPriceApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
