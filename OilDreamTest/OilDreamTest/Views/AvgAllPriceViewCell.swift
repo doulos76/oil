@@ -11,7 +11,7 @@ import UIKit
 class AvgAllPriceViewCell: UICollectionViewCell {
   
 
-  var oil: Oil! {
+  var oil: AvgAllPriceOil! {
     didSet {
       productNameLabel.text = oil.productName
       priceLabel.text = oil.price

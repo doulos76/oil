@@ -9,20 +9,20 @@
 import Foundation
 
 struct AvgAllPrice: Decodable {
-  let result: Result
+  let result: AvgAllPriceResult
   enum CodingKeys: String, CodingKey {
     case result = "RESULT"
   }
 }
 
-struct Result: Decodable {
-  let oils: [Oil]
+struct AvgAllPriceResult: Decodable {
+  let avgAllPriceOils: [AvgAllPriceOil]
   enum CodingKeys: String, CodingKey {
-    case oils = "OIL"
+    case avgAllPriceOils = "OIL"
   }
 }
 
-struct Oil: Decodable {
+struct AvgAllPriceOil: Decodable {
   let tradeDate: String     // 해당일자
   let productCode: String   // 제품 구분 코드
   let productName: String   // 제품명

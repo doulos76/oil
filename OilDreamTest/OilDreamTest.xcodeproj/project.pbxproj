@@ -39,6 +39,7 @@
 		55AC7E462186DF8B00E59A4A /* InsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC7E452186DF8B00E59A4A /* InsetLabel.swift */; };
 		55AC7E482186EC2200E59A4A /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC7E472186EC2200E59A4A /* AddressCell.swift */; };
 		55AC7E4B2187037800E59A4A /* AvgAllPriceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC7E4A2187037800E59A4A /* AvgAllPriceApi.swift */; };
+		55CB1F4B218842300048EC67 /* AvgSidoPriceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB1F4A218842300048EC67 /* AvgSidoPriceApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		55AC7E452186DF8B00E59A4A /* InsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetLabel.swift; sourceTree = "<group>"; };
 		55AC7E472186EC2200E59A4A /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		55AC7E4A2187037800E59A4A /* AvgAllPriceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgAllPriceApi.swift; sourceTree = "<group>"; };
+		55CB1F4A218842300048EC67 /* AvgSidoPriceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgSidoPriceApi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				55AC7E4A2187037800E59A4A /* AvgAllPriceApi.swift */,
+				55CB1F4A218842300048EC67 /* AvgSidoPriceApi.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				5591B09B216750E3007BCCD2 /* Constants.swift in Sources */,
 				556C75082171D86200A3D9C2 /* AvgAllPriceHeaderView.swift in Sources */,
 				553340EF2178CC0B0056B54D /* AvgSidoPrice.swift in Sources */,
+				55CB1F4B218842300048EC67 /* AvgSidoPriceApi.swift in Sources */,
 				553D4703216E179C00CA4B2E /* AvgAllPrice.swift in Sources */,
 				556C750A2171ECCC00A3D9C2 /* AvgAllPriceViewController.swift in Sources */,
 				556711C2216495FC009B4C52 /* SearchViewController.swift in Sources */,

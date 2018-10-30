@@ -10,7 +10,7 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-  var oils = [Oil]()
+  var oils = [AvgAllPriceOil]()
   var avgAllPriceApi = AvgAllPriceApi()
 
   let headerView: UIView = {
@@ -136,8 +136,8 @@ class SettingsViewController: UIViewController {
   func displayAvgAllPrice() {
     avgAllPriceApi.getAvgAllPrice { (avgAllPrice) in
       if let avgAllPrice = avgAllPrice {
-        self.oils = avgAllPrice.result.oils
-        let tradeDate = avgAllPrice.result.oils[0].tradeDate
+        self.oils = avgAllPrice.result.avgAllPriceOils
+        let tradeDate = avgAllPrice.result.avgAllPriceOils[0].tradeDate
         let dateString = self.dateHandler(date: tradeDate)
         DispatchQueue.main.async {
           self.dateLabel.text = dateString
@@ -154,7 +154,6 @@ class SettingsViewController: UIViewController {
     dateString.insert(contentsOf: seperator, at: index)
     index = dateString.index(dateString.endIndex, offsetBy: -2)
     dateString.insert(contentsOf: seperator, at: index)
-    print(dateString)
     return dateString
   }
   
