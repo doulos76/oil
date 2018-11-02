@@ -1,0 +1,6 @@
+framework module Pods_OilDreamTest {
+  umbrella header "Pods-OilDreamTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

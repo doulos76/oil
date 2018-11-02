@@ -9,9 +9,9 @@
 import Foundation
 
 struct AvgAllPrice: Decodable {
-  let result: AvgAllPriceResult
+  let avgAllPriceResult: AvgAllPriceResult
   enum CodingKeys: String, CodingKey {
-    case result = "RESULT"
+    case avgAllPriceResult = "RESULT"
   }
 }
 

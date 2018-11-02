@@ -136,8 +136,8 @@ class SettingsViewController: UIViewController {
   func displayAvgAllPrice() {
     avgAllPriceApi.getAvgAllPrice { (avgAllPrice) in
       if let avgAllPrice = avgAllPrice {
-        self.oils = avgAllPrice.result.avgAllPriceOils
-        let tradeDate = avgAllPrice.result.avgAllPriceOils[0].tradeDate
+        self.oils = avgAllPrice.avgAllPriceResult.avgAllPriceOils
+        let tradeDate = avgAllPrice.avgAllPriceResult.avgAllPriceOils[0].tradeDate
         let dateString = self.dateHandler(date: tradeDate)
         DispatchQueue.main.async {
           self.dateLabel.text = dateString
@@ -205,8 +205,26 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
   }
   
+  func didSelectSettingMenuCell(indexPath: IndexPath) -> UIViewController {
+    var destinationVC = UIViewController()
+    switch indexPath.row {
+    case 0:
+      destinationVC = GasStrationTypeSettingController()
+    case 1:
+      destinationVC = OilTypeSettingController()
+    case 2:
+      destinationVC = BrandSettingController()
+    case 3:
+      destinationVC = SearchRangeSettingController()
+    default:
+      destinationVC = DiscountCreditCardSettingController()
+    }
+    return destinationVC
+  }
+  
+  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let settingDetailViewControlller = SettingDetailViewController()
+    let settingDetailViewControlller = didSelectSettingMenuCell(indexPath: indexPath)
     navigationController?.pushViewController(settingDetailViewControlller, animated: true)
   }
 }

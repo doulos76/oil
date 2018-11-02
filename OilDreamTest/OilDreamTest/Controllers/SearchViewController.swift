@@ -23,7 +23,10 @@ class SearchViewController: UITableViewController {
     SearchMenuItem(icon: UIImage(named: "building")!, title: "주소 검색"),
     SearchMenuItem(icon: UIImage(named: "gps")!, title: "내 주변 검색"),
     SearchMenuItem(icon: UIImage(named: "highwaySearch")!, title: "도로 검색"),
+    SearchMenuItem(icon: UIImage(named: "gps")!, title: "시군구별 평균 기름"),
+    SearchMenuItem(icon: UIImage(named: "gps")!, title: "주유소 이름으로 검색"),
     SearchMenuItem(icon: UIImage(named: "favorite")!, title: "즐겨 찾기")
+    
   ]
   
   override func viewDidLoad() {
@@ -40,7 +43,7 @@ class SearchViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 4
+    return searchMenuItems.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -60,24 +63,26 @@ class SearchViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
     let destinationController = didSelectSearchMenuItem(indexPath: indexPath)
+    navigationController?.pushViewController(destinationController, animated: true)
   }
   
   func didSelectSearchMenuItem(indexPath: IndexPath) -> UIViewController {
     var destinationVC = UIViewController()
     switch indexPath.row {
     case 0:
-      print("Show Main Screen")
       destinationVC = AddressSearchViewController()
     case 1:
       destinationVC = GasStationListViewController()
       dismiss(animated: true, completion: nil)
     case 2:
       destinationVC = HighwaySearchViewController()
+    case 3:
+      destinationVC = AdministrativeDistrictAvgOilPriceViewController()
+    case 4:
+      destinationVC = SearchByNameController()
     default:
       destinationVC = BookmarkViewController()
     }
-    
-    navigationController?.pushViewController(destinationVC, animated: true)
     return destinationVC
   }
 }

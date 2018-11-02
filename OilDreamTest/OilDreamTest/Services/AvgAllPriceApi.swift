@@ -12,8 +12,8 @@ class AvgAllPriceApi {
   
   // Web request with Codable
   func getAvgAllPrice(completion: @escaping AvgAllPriceResponseCompletion) {
-    let avgAllPrieUrlString = AVG_ALL_PRICE + QUERY_OUT_JSON_AND_CODE + OPINET_CODE
-    guard let urlRequest = URL(string: avgAllPrieUrlString) else { return }
+    let avgAllPriceUrlString = AVG_ALL_PRICE + QUERY_OUT_JSON_AND_CODE + OPINET_CODE
+    guard let urlRequest = URL(string: avgAllPriceUrlString) else { return }
     let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
       guard error == nil else {
         debugPrint(error.debugDescription)

@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40FCF3A663A412FC20B9134D /* Pods_OilDreamTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A336E44CF1D8C69254871E5B /* Pods_OilDreamTest.framework */; };
 		550EAFD42182E151002BBCE1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EAFD32182E151002BBCE1 /* UIView+Extensions.swift */; };
 		550EAFD62182E6EF002BBCE1 /* GasStationSearchSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EAFD52182E6EF002BBCE1 /* GasStationSearchSettingCell.swift */; };
 		550EAFD82182FAE7002BBCE1 /* GasStationSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550EAFD72182FAE7002BBCE1 /* GasStationSearchModel.swift */; };
+		551073C1218A97FD007B0F96 /* SearchByName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551073C0218A97FD007B0F96 /* SearchByName.swift */; };
+		551073C3218ABB52007B0F96 /* SearchByNameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551073C2218ABB52007B0F96 /* SearchByNameController.swift */; };
+		551073C5218ABD32007B0F96 /* SearchByNameApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551073C4218ABD32007B0F96 /* SearchByNameApi.swift */; };
 		5525605D21842DB400BEC674 /* AreaCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5525605C21842DB400BEC674 /* AreaCode.swift */; };
 		553340ED2178CAFB0056B54D /* ProductCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553340EC2178CAFB0056B54D /* ProductCode.swift */; };
 		553340EF2178CC0B0056B54D /* AvgSidoPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553340EE2178CC0B0056B54D /* AvgSidoPrice.swift */; };
@@ -40,12 +44,22 @@
 		55AC7E482186EC2200E59A4A /* AddressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC7E472186EC2200E59A4A /* AddressCell.swift */; };
 		55AC7E4B2187037800E59A4A /* AvgAllPriceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AC7E4A2187037800E59A4A /* AvgAllPriceApi.swift */; };
 		55CB1F4B218842300048EC67 /* AvgSidoPriceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB1F4A218842300048EC67 /* AvgSidoPriceApi.swift */; };
+		55CB1F4D218850780048EC67 /* AdministrativeDistrictAvgOilPriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB1F4C218850780048EC67 /* AdministrativeDistrictAvgOilPriceViewController.swift */; };
+		55CB1F4F218865680048EC67 /* GasStationTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB1F4E218865680048EC67 /* GasStationTypeController.swift */; };
+		55CB1F51218867070048EC67 /* OilTypeSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB1F50218867070048EC67 /* OilTypeSettingController.swift */; };
+		55CB1F532188678A0048EC67 /* BrandSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB1F522188678A0048EC67 /* BrandSettingController.swift */; };
+		55CB1F55218867D20048EC67 /* SearchRangeSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB1F54218867D20048EC67 /* SearchRangeSettingController.swift */; };
+		55CB1F57218868280048EC67 /* DiscountCreditCardSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB1F56218868280048EC67 /* DiscountCreditCardSettingController.swift */; };
+		55CB1F592188738A0048EC67 /* AreaCodeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55CB1F582188738A0048EC67 /* AreaCodeApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		550EAFD32182E151002BBCE1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		550EAFD52182E6EF002BBCE1 /* GasStationSearchSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationSearchSettingCell.swift; sourceTree = "<group>"; };
 		550EAFD72182FAE7002BBCE1 /* GasStationSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationSearchModel.swift; sourceTree = "<group>"; };
+		551073C0218A97FD007B0F96 /* SearchByName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByName.swift; sourceTree = "<group>"; };
+		551073C2218ABB52007B0F96 /* SearchByNameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByNameController.swift; sourceTree = "<group>"; };
+		551073C4218ABD32007B0F96 /* SearchByNameApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByNameApi.swift; sourceTree = "<group>"; };
 		5525605C21842DB400BEC674 /* AreaCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCode.swift; sourceTree = "<group>"; };
 		553340EC2178CAFB0056B54D /* ProductCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCode.swift; sourceTree = "<group>"; };
 		553340EE2178CC0B0056B54D /* AvgSidoPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgSidoPrice.swift; sourceTree = "<group>"; };
@@ -78,6 +92,16 @@
 		55AC7E472186EC2200E59A4A /* AddressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressCell.swift; sourceTree = "<group>"; };
 		55AC7E4A2187037800E59A4A /* AvgAllPriceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgAllPriceApi.swift; sourceTree = "<group>"; };
 		55CB1F4A218842300048EC67 /* AvgSidoPriceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgSidoPriceApi.swift; sourceTree = "<group>"; };
+		55CB1F4C218850780048EC67 /* AdministrativeDistrictAvgOilPriceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrativeDistrictAvgOilPriceViewController.swift; sourceTree = "<group>"; };
+		55CB1F4E218865680048EC67 /* GasStationTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationTypeController.swift; sourceTree = "<group>"; };
+		55CB1F50218867070048EC67 /* OilTypeSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilTypeSettingController.swift; sourceTree = "<group>"; };
+		55CB1F522188678A0048EC67 /* BrandSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandSettingController.swift; sourceTree = "<group>"; };
+		55CB1F54218867D20048EC67 /* SearchRangeSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRangeSettingController.swift; sourceTree = "<group>"; };
+		55CB1F56218868280048EC67 /* DiscountCreditCardSettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountCreditCardSettingController.swift; sourceTree = "<group>"; };
+		55CB1F582188738A0048EC67 /* AreaCodeApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaCodeApi.swift; sourceTree = "<group>"; };
+		A336E44CF1D8C69254871E5B /* Pods_OilDreamTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OilDreamTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC1C3E5E3D1FF4F012720258 /* Pods-OilDreamTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OilDreamTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-OilDreamTest/Pods-OilDreamTest.release.xcconfig"; sourceTree = "<group>"; };
+		BFE025BE57494870492DC777 /* Pods-OilDreamTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OilDreamTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OilDreamTest/Pods-OilDreamTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40FCF3A663A412FC20B9134D /* Pods_OilDreamTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +129,8 @@
 			children = (
 				556711AB21648F97009B4C52 /* OilDreamTest */,
 				556711AA21648F97009B4C52 /* Products */,
+				B3454EF27CE0D95F6D43069D /* Pods */,
+				C0E50704C3A31C70CAF71481 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +174,13 @@
 				556711CD21649A4A009B4C52 /* GasStationDetailViewController.swift */,
 				556711CF21649A92009B4C52 /* BookmarkViewController.swift */,
 				556C75092171ECCC00A3D9C2 /* AvgAllPriceViewController.swift */,
+				55CB1F4C218850780048EC67 /* AdministrativeDistrictAvgOilPriceViewController.swift */,
+				55CB1F4E218865680048EC67 /* GasStationTypeController.swift */,
+				55CB1F50218867070048EC67 /* OilTypeSettingController.swift */,
+				55CB1F522188678A0048EC67 /* BrandSettingController.swift */,
+				55CB1F54218867D20048EC67 /* SearchRangeSettingController.swift */,
+				55CB1F56218868280048EC67 /* DiscountCreditCardSettingController.swift */,
+				551073C2218ABB52007B0F96 /* SearchByNameController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -174,6 +208,7 @@
 				553340EC2178CAFB0056B54D /* ProductCode.swift */,
 				550EAFD72182FAE7002BBCE1 /* GasStationSearchModel.swift */,
 				5525605C21842DB400BEC674 /* AreaCode.swift */,
+				551073C0218A97FD007B0F96 /* SearchByName.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,8 +235,27 @@
 			children = (
 				55AC7E4A2187037800E59A4A /* AvgAllPriceApi.swift */,
 				55CB1F4A218842300048EC67 /* AvgSidoPriceApi.swift */,
+				55CB1F582188738A0048EC67 /* AreaCodeApi.swift */,
+				551073C4218ABD32007B0F96 /* SearchByNameApi.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		B3454EF27CE0D95F6D43069D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BFE025BE57494870492DC777 /* Pods-OilDreamTest.debug.xcconfig */,
+				BC1C3E5E3D1FF4F012720258 /* Pods-OilDreamTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C0E50704C3A31C70CAF71481 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A336E44CF1D8C69254871E5B /* Pods_OilDreamTest.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 556711BB21648F99009B4C52 /* Build configuration list for PBXNativeTarget "OilDreamTest" */;
 			buildPhases = (
+				C04F6A0F0E75B851735FF71C /* [CP] Check Pods Manifest.lock */,
 				556711A521648F97009B4C52 /* Sources */,
 				556711A621648F97009B4C52 /* Frameworks */,
 				556711A721648F97009B4C52 /* Resources */,
+				601AF3DAE3C2BA9BA92D0D74 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -270,6 +326,45 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		601AF3DAE3C2BA9BA92D0D74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OilDreamTest/Pods-OilDreamTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OilDreamTest/Pods-OilDreamTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C04F6A0F0E75B851735FF71C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OilDreamTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		556711A521648F97009B4C52 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -279,11 +374,15 @@
 				55AC7E462186DF8B00E59A4A /* InsetLabel.swift in Sources */,
 				55A1EA24216644A6005D6852 /* Search.swift in Sources */,
 				550EAFD82182FAE7002BBCE1 /* GasStationSearchModel.swift in Sources */,
+				55CB1F57218868280048EC67 /* DiscountCreditCardSettingController.swift in Sources */,
 				556C750C2171ED0C00A3D9C2 /* AvgAllPriceViewCell.swift in Sources */,
+				551073C3218ABB52007B0F96 /* SearchByNameController.swift in Sources */,
+				55CB1F4D218850780048EC67 /* AdministrativeDistrictAvgOilPriceViewController.swift in Sources */,
 				556711C8216499A6009B4C52 /* AddressSearchViewController.swift in Sources */,
 				556711D321649D54009B4C52 /* UIColor+Theme.swift in Sources */,
 				556711CC21649A03009B4C52 /* GasStationListViewController.swift in Sources */,
 				556711C621649931009B4C52 /* SettingDetailViewController.swift in Sources */,
+				55CB1F532188678A0048EC67 /* BrandSettingController.swift in Sources */,
 				5591B09B216750E3007BCCD2 /* Constants.swift in Sources */,
 				556C75082171D86200A3D9C2 /* AvgAllPriceHeaderView.swift in Sources */,
 				553340EF2178CC0B0056B54D /* AvgSidoPrice.swift in Sources */,
@@ -292,17 +391,23 @@
 				556C750A2171ECCC00A3D9C2 /* AvgAllPriceViewController.swift in Sources */,
 				556711C2216495FC009B4C52 /* SearchViewController.swift in Sources */,
 				550EAFD42182E151002BBCE1 /* UIView+Extensions.swift in Sources */,
+				55CB1F55218867D20048EC67 /* SearchRangeSettingController.swift in Sources */,
 				55A1EA222166289F005D6852 /* BottomBarView.swift in Sources */,
 				550EAFD62182E6EF002BBCE1 /* GasStationSearchSettingCell.swift in Sources */,
 				556711D021649A92009B4C52 /* BookmarkViewController.swift in Sources */,
 				55A1EA2621664861005D6852 /* SearchViewCell.swift in Sources */,
 				556711CA216499D1009B4C52 /* HighwaySearchViewController.swift in Sources */,
 				556711AF21648F97009B4C52 /* MainViewController.swift in Sources */,
+				551073C5218ABD32007B0F96 /* SearchByNameApi.swift in Sources */,
 				55AC7E482186EC2200E59A4A /* AddressCell.swift in Sources */,
 				5525605D21842DB400BEC674 /* AreaCode.swift in Sources */,
 				5591B09E2167568E007BCCD2 /* FeedParser.swift in Sources */,
 				556711AD21648F97009B4C52 /* AppDelegate.swift in Sources */,
+				55CB1F51218867070048EC67 /* OilTypeSettingController.swift in Sources */,
+				55CB1F4F218865680048EC67 /* GasStationTypeController.swift in Sources */,
 				556711C421649644009B4C52 /* SettingsViewController.swift in Sources */,
+				55CB1F592188738A0048EC67 /* AreaCodeApi.swift in Sources */,
+				551073C1218A97FD007B0F96 /* SearchByName.swift in Sources */,
 				556711CE21649A4A009B4C52 /* GasStationDetailViewController.swift in Sources */,
 				55AC7E4B2187037800E59A4A /* AvgAllPriceApi.swift in Sources */,
 			);
@@ -448,6 +553,7 @@
 		};
 		556711BC21648F99009B4C52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFE025BE57494870492DC777 /* Pods-OilDreamTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +572,7 @@
 		};
 		556711BD21648F99009B4C52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC1C3E5E3D1FF4F012720258 /* Pods-OilDreamTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

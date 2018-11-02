@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Alamofire
 
 class AddressSearchViewController: UIViewController {
+  
+  var areaCodeOils = [AreaCodeOil]()
+  let areaCodeApi = AreaCodeApi()
   
   let dummyAddressOfSiDo = ["서울", "경기도", "인천", "제주도", "경상남도", "경상북도", "강원도", "충청남도", "충청북도", "전라남도", "전라북도", "부산", "대구", "대전", "서울", "경기도", "인천", "제주도", "경상남도", "경상북도", "강원도", "충청남도", "충청북도", "전라남도", "전라북도", "부산", "대구", "대전"]
   let dummyAddressOfSiGunGu = ["종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악"]
@@ -45,20 +49,19 @@ class AddressSearchViewController: UIViewController {
     collectionView.dataSource = self
     collectionView.delegate = self
     collectionView.register(AddressCell.self, forCellWithReuseIdentifier: cellId)
+    displayAreaList()
     setupCollectionView(index: 0)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-//    collectionView.layoutIfNeeded()
+    //    collectionView.layoutIfNeeded()
     collectionView.reloadData()
   }
   
   // MARK:- Setup Works
   func setupNavigationBarUI() {
     navigationItem.title = "주소기반 검색"
-//    navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(handleSearch))
-//    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "setting"), style: .plain, target: self, action: #selector(handleSettings))
   }
   
   fileprivate func setupSegmentedControl() {
@@ -76,15 +79,12 @@ class AddressSearchViewController: UIViewController {
     case 0:
       address = dummyAddressOfSiDo
       setupCollectionView(index: 0)
-      print("sido")
     case 1:
       address = dummyAddressOfSiGunGu
       setupCollectionView(index: 1)
-      print("siGUnGu")
     default:
       address = dummyAddressOfEupMyenDong
       setupCollectionView(index: 2)
-      print("EupMyeonDong")
       break
     }
     collectionView.reloadData()
@@ -94,23 +94,35 @@ class AddressSearchViewController: UIViewController {
     print("change Administrative District")
     
   }
+
+  func displayAreaList() {
+    areaCodeApi.getAreaCode { (areaCode) in
+      if let areaCode = areaCode {
+        
+        DispatchQueue.main.async {
+          self.collectionView.reloadData()
+        }
+      }
+    }
+  }
 }
 
 extension AddressSearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    let index = self.addressSegmentedControl.selectedSegmentIndex
-    var address = dummyAddressOfSiDo
-    switch index {
-    case 0:
-      address = dummyAddressOfSiDo
-    case 1:
-      address = dummyAddressOfSiGunGu
-    case 2:
-      address = dummyAddressOfEupMyenDong
-    default:
-      address = dummyAddressOfSiDo
-    }
-    return address.count
+    //    let index = self.addressSegmentedControl.selectedSegmentIndex
+    //    var address = dummyAddressOfSiDo
+    //    switch index {
+    //    case 0:
+    //      address = dummyAddressOfSiDo
+    //    case 1:
+    //      address = dummyAddressOfSiGunGu
+    //    case 2:
+    //      address = dummyAddressOfEupMyenDong
+    //    default:
+    //      address = dummyAddressOfSiDo
+    //    }
+    //    return address.count
+    return areaCodeOils.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

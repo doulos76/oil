@@ -38,3 +38,6 @@ let AREA_CODE = URL_BASE + "areaCode.do"
 let SEARCH_BY_NAME = URL_BASE + "searchByName.do"
 
 typealias AvgAllPriceResponseCompletion = (AvgAllPrice?) -> Void
+typealias AvgSidoPriceResponseCompletion = (AvgSidoPrice?) -> Void
+typealias AreaCodeResponseCompletion = (AreaCode?) -> Void
+typealias SearchByNameResponseCompletion = (SearchByName?) -> Void
