@@ -9,25 +9,25 @@
 import Foundation
 
 struct AreaCode: Decodable {
-  let areaCodeResult: AreaCodeResult
-  
+  let result: AreaCodeResult
+
   enum CodingKeys: String, CodingKey {
-    case areaCodeResult = "RESULT"
+    case result = "RESULT"
   }
 }
 
 struct AreaCodeResult: Decodable {
-  let areaCodeOils: [AreaCodeOil]
-  
-  enum CodkingKeys: String, CodingKey {
-    case areaCodeOils = "OIL"
+  let oil: [AreaCodeOil]
+
+  enum CodingKeys: String, CodingKey {
+    case oil = "OIL"
   }
 }
 
 struct AreaCodeOil: Decodable {
-  let areaCode: Int
-  let areaName: String
-  
+  let areaCode: String    // 지역코드
+  let areaName: String    // 지역이름
+
   enum CodingKeys: String, CodingKey {
     case areaCode = "AREA_CD"
     case areaName = "AREA_NM"

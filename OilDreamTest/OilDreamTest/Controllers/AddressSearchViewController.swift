@@ -92,13 +92,21 @@ class AddressSearchViewController: UIViewController {
   
   fileprivate func changeAdministrativeDistrict() {
     print("change Administrative District")
+    addressSegmentedControl.selectedSegmentIndex = 1
+    collectionView.removeFromSuperview()
+    view.addSubview(collectionView)
+    displayAreaList()
+    collectionView.reloadData()
+    view.layoutIfNeeded()
     
   }
 
   func displayAreaList() {
     areaCodeApi.getAreaCode { (areaCode) in
       if let areaCode = areaCode {
-        
+        self.areaCodeOils = areaCode.result.oil
+        print("\n================[in completion handler]================\n")
+        print(self.areaCodeOils)
         DispatchQueue.main.async {
           self.collectionView.reloadData()
         }
@@ -109,35 +117,13 @@ class AddressSearchViewController: UIViewController {
 
 extension AddressSearchViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    //    let index = self.addressSegmentedControl.selectedSegmentIndex
-    //    var address = dummyAddressOfSiDo
-    //    switch index {
-    //    case 0:
-    //      address = dummyAddressOfSiDo
-    //    case 1:
-    //      address = dummyAddressOfSiGunGu
-    //    case 2:
-    //      address = dummyAddressOfEupMyenDong
-    //    default:
-    //      address = dummyAddressOfSiDo
-    //    }
-    //    return address.count
     return areaCodeOils.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AddressCell
-    let index = self.addressSegmentedControl.selectedSegmentIndex
-    var address = dummyAddressOfSiDo
-    switch index {
-    case 1:
-      address = dummyAddressOfSiGunGu
-    case 2:
-      address = dummyAddressOfEupMyenDong
-    default:
-      address = dummyAddressOfSiDo
-    }
-    cell.titleLabel.text = "\(address[indexPath.row])"
+    let areaCode = areaCodeOils[indexPath.row]
+    cell.titleLabel.text = areaCode.areaName
     return cell
   }
   

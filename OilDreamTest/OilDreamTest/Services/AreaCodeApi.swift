@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 class AreaCodeApi {
-  func getAreaCode(completion: @escaping AreaCodeResponseCompletion) {
-    let areaCodeUrlString = AREA_CODE + QUERY_OUT_JSON_AND_OPINET_CODE// + "&area=01"
+  func getAreaCode(areaCD: Int = 0, completion: @escaping AreaCodeResponseCompletion) {
+    let areaCodeUrlString = AREA_CODE + QUERY_OUT_JSON_AND_OPINET_CODE + "&area=0\(areaCD)"
     guard let url = URL(string: areaCodeUrlString) else { return }
     let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
       guard error == nil else {
@@ -20,10 +20,9 @@ class AreaCodeApi {
         return
       }
       guard let data = data else { return }
-//      print(String(data: data, encoding: .utf8))
       do {
-        let areaCode = try JSONDecoder().decode(AreaCode.self, from: data)
-        print(areaCode)
+        let jsonDecoder = JSONDecoder()
+        let areaCode = try jsonDecoder.decode(AreaCode.self, from: data)
         DispatchQueue.main.async {
           completion(areaCode)
         }

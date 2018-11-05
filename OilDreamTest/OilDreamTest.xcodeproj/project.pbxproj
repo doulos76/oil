@@ -145,18 +145,18 @@
 		556711AB21648F97009B4C52 /* OilDreamTest */ = {
 			isa = PBXGroup;
 			children = (
-				55AC7E492187036200E59A4A /* Services */,
-				550EAFD22182E136002BBCE1 /* Extensions */,
-				5591B09C21675676007BCCD2 /* Helper */,
 				556711AC21648F97009B4C52 /* AppDelegate.swift */,
 				556711B021648F97009B4C52 /* Main.storyboard */,
 				556711C021649594009B4C52 /* Model */,
 				556711BF21649589009B4C52 /* Views */,
 				556711BE2164957E009B4C52 /* Controllers */,
 				556711D121649D1B009B4C52 /* Utilities */,
-				556711B521648F99009B4C52 /* LaunchScreen.storyboard */,
-				55A1EA2721664B67005D6852 /* Assets.xcassets */,
+				55AC7E492187036200E59A4A /* Services */,
+				550EAFD22182E136002BBCE1 /* Extensions */,
+				5591B09C21675676007BCCD2 /* Helper */,
 				556711B821648F99009B4C52 /* Info.plist */,
+				55A1EA2721664B67005D6852 /* Assets.xcassets */,
+				556711B521648F99009B4C52 /* LaunchScreen.storyboard */,
 			);
 			path = OilDreamTest;
 			sourceTree = "<group>";

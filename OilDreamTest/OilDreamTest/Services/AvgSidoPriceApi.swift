@@ -19,6 +19,7 @@ class AvgSidoPriceApi {
         return
       }
       guard let data = data else { return }
+      print(String(data: data, encoding: .utf8)!)
       let jsonDecoder = JSONDecoder()
       do {
         let avgSidoPrice = try jsonDecoder.decode(AvgSidoPrice.self, from: data)
