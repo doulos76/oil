@@ -13,16 +13,14 @@ class AddressSearchViewController: UIViewController {
   
   var areaCodeOils = [AreaCodeOil]()
   let areaCodeApi = AreaCodeApi()
+  var areaCD = 0
   
-  let dummyAddressOfSiDo = ["서울", "경기도", "인천", "제주도", "경상남도", "경상북도", "강원도", "충청남도", "충청북도", "전라남도", "전라북도", "부산", "대구", "대전", "서울", "경기도", "인천", "제주도", "경상남도", "경상북도", "강원도", "충청남도", "충청북도", "전라남도", "전라북도", "부산", "대구", "대전"]
-  let dummyAddressOfSiGunGu = ["종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악", "종로", "영등포", "구로", "강남", "송파", "관악"]
-  let dummyAddressOfEupMyenDong = ["구로1", "서초", "숭의", "구월", "봉천", "신림", "신림2", "신림3", "용현1", "용현2", "구로1", "서초", "숭의", "구월", "봉천", "신림", "신림2", "신림3", "용현1", "용현2", "구로1", "서초", "숭의", "구월", "봉천", "신림", "신림2", "신림3", "용현1", "용현2", "구로1", "서초", "숭의", "구월", "봉천", "신림", "신림2", "신림3", "용현1", "용현2", "구로1", "서초", "숭의", "구월", "봉천", "신림", "신림2", "신림3", "용현1", "용현2", "구로1", "서초", "숭의", "구월", "봉천", "신림", "신림2", "신림3", "용현1", "용현2"]
   var address: [String] = []
   let cellId = "cellId"
   
   // MARK:- Instance Variable
   let addressSegmentedControl: UISegmentedControl = {
-    let items = ["시/도", "시/군/구", "읍/면/동"]
+    let items = ["시/도", "시/군/구"]
     let segmentedControl = UISegmentedControl(items: items)
     segmentedControl.translatesAutoresizingMaskIntoConstraints = false
     segmentedControl.backgroundColor = .white
@@ -49,14 +47,15 @@ class AddressSearchViewController: UIViewController {
     collectionView.dataSource = self
     collectionView.delegate = self
     collectionView.register(AddressCell.self, forCellWithReuseIdentifier: cellId)
-    displayAreaList()
+    displayAreaList(areaCD: areaCD)
     setupCollectionView(index: 0)
+    segmentEnable()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    //    collectionView.layoutIfNeeded()
     collectionView.reloadData()
+    collectionView.layoutIfNeeded()
   }
   
   // MARK:- Setup Works
@@ -77,36 +76,42 @@ class AddressSearchViewController: UIViewController {
   @objc func indexChanged(_ sender: UISegmentedControl) {
     switch sender.selectedSegmentIndex {
     case 0:
-      address = dummyAddressOfSiDo
       setupCollectionView(index: 0)
     case 1:
-      address = dummyAddressOfSiGunGu
       setupCollectionView(index: 1)
     default:
-      address = dummyAddressOfEupMyenDong
-      setupCollectionView(index: 2)
+      setupCollectionView(index: 0)
       break
     }
-    collectionView.reloadData()
+  }
+  
+  func segmentEnable() {
+    if addressSegmentedControl.selectedSegmentIndex == 0 {
+      addressSegmentedControl.setEnabled(true, forSegmentAt: 0)
+      addressSegmentedControl.setEnabled(false, forSegmentAt: 1)
+      areaCD = 0
+      displayAreaList(areaCD: 0)
+    } else if addressSegmentedControl.selectedSegmentIndex == 1 {
+      addressSegmentedControl.setEnabled(true, forSegmentAt: 0)
+      addressSegmentedControl.setEnabled(true, forSegmentAt: 1)
+      areaCD = 0
+      displayAreaList(areaCD: 0)
+    }
   }
   
   fileprivate func changeAdministrativeDistrict() {
     print("change Administrative District")
     addressSegmentedControl.selectedSegmentIndex = 1
-    collectionView.removeFromSuperview()
-    view.addSubview(collectionView)
-    displayAreaList()
+    
+    displayAreaList(areaCD: areaCD)
     collectionView.reloadData()
     view.layoutIfNeeded()
-    
   }
-
-  func displayAreaList() {
-    areaCodeApi.getAreaCode { (areaCode) in
+  
+  func displayAreaList(areaCD: Int) {
+    areaCodeApi.getAreaCode(areaCD: areaCD) { (areaCode) in
       if let areaCode = areaCode {
         self.areaCodeOils = areaCode.result.oil
-        print("\n================[in completion handler]================\n")
-        print(self.areaCodeOils)
         DispatchQueue.main.async {
           self.collectionView.reloadData()
         }
@@ -133,8 +138,8 @@ extension AddressSearchViewController: UICollectionViewDataSource, UICollectionV
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    areaCD = indexPath.row + 1
     collectionView.deselectItem(at: indexPath, animated: true)
-    print(indexPath.row)
     changeAdministrativeDistrict()
   }
   

@@ -18,6 +18,9 @@ class MainViewController: UIViewController {
     return map
   }()
   
+  var aroundAllOils = [AroundAllOil]()
+  let aroundAllApi = AroundAllApi()
+  
   var bottomBarView = BottomBarView()
   
   private let locationManager = CLLocationManager()
@@ -29,7 +32,7 @@ class MainViewController: UIViewController {
     
     setupNavigationBarUI()
     setupUI()
-
+    getAroundAllGastation()
   }
   
   func setupNavigationBarUI() {
@@ -52,7 +55,6 @@ class MainViewController: UIViewController {
     bottomBarView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     bottomBarView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     bottomBarView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-
   }
   
   @objc func handleSearch() {
@@ -65,6 +67,17 @@ class MainViewController: UIViewController {
     let settingsViewController = SettingsViewController()
     let navigationController = CustomNavigationController(rootViewController: settingsViewController)
     present(navigationController, animated: true, completion: nil)
+  }
+  
+  func getAroundAllGastation() {
+    aroundAllApi.getAroundAll { (aroundAll) in
+      if let aroundAll = aroundAll {
+        self.aroundAllOils = aroundAll.aroundAllResult.aroundAllOil
+        DispatchQueue.main.async {
+          print(self.aroundAllOils)          
+        }
+      }
+    }
   }
   
 }

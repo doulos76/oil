@@ -41,3 +41,4 @@ typealias AvgAllPriceResponseCompletion = (AvgAllPrice?) -> Void
 typealias AvgSidoPriceResponseCompletion = (AvgSidoPrice?) -> Void
 typealias AreaCodeResponseCompletion = (AreaCode?) -> Void
 typealias SearchByNameResponseCompletion = (SearchByName?) -> Void
+typealias AroundAllResponseCompletion = (AroundAll?) -> Void
